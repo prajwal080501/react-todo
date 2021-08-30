@@ -5,6 +5,7 @@ import { TextField } from "@material-ui/core";
 import Todo from './components/Todo';
 import { useEffect } from "react";
 import db from "./firebase"
+import firebase from "firebase"
 
 function App() {
   const [todos, setTodos] = useState([""]);
@@ -13,14 +14,20 @@ function App() {
   //when the app loads we need load database as we add a new todos added.
   useEffect(() => {
     //This code fires when the app loads.
-    db.collection('todos').unSnapshot(snapshot => {
+    db.collection('todos').orderBy('timeStamp', 'desc'
+    ).onSnapshot(snapshot => {
       setTodos(snapshot.docs.map(doc => doc.data().todo))
     });
   }, []);
 
   const addTodo = (event) => {
     // This will fireup when we click button
-    event.preventDefault(); // Thsi will avoid page refreshing after hitting enter button  when adding a new todo.
+    event.preventDefault();// Thsi will avoid page refreshing after hitting enter button  when adding a new todo.
+    db.collection("todos").add({
+      todo: input,
+      timeStamp: firebase.firestore.FieldValue.serverTimestamp()
+    })  
+
     setTodos([...todos, input]);
     setInput("");
   };

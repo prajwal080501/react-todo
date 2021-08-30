@@ -7,7 +7,7 @@ export default function Todo(props) {
         <list className="todo-list">
               <ListItem className="todo-list-item">
                   <ListItemAvatar></ListItemAvatar>
-            <ListItemText primary={props.text} secondary="Dummy Deadline ⏰" />
+            <ListItemText primary={props.text} secondary="Inprogress ⏰" />
           </ListItem>
         </list>
       </div>
