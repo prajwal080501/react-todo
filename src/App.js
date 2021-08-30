@@ -2,7 +2,7 @@ import "./App.css";
 import React, { useState } from "react";
 import Button from "@material-ui/core/Button";
 import { TextField } from "@material-ui/core";
-import Todo from './components/Todo';
+import Todo from './Todo';
 import { useEffect } from "react";
 import db from "./firebase"
 import firebase from "firebase"
@@ -16,7 +16,7 @@ function App() {
     //This code fires when the app loads.
     db.collection('todos').orderBy('timeStamp', 'desc'
     ).onSnapshot(snapshot => {
-      setTodos(snapshot.docs.map(doc => doc.data().todo))
+      setTodos(snapshot.docs.map(doc => ({id:doc.id, todo: doc.data().todo})))
     });
   }, []);
 
@@ -60,7 +60,7 @@ function App() {
         {" "}
         <ul>
           {todos.map((todo) => (
-            <Todo text={todo}/>
+            <Todo todo={todo}/>
           ))}
         </ul>
       </center>
