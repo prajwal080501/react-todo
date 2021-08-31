@@ -24,7 +24,7 @@
   transition-duration: 0.7s;
   transition-timing-function: ease;
 }
-add-todo-button {
+.add-todo-button {
   position: relative;
 }
 .edit-button {

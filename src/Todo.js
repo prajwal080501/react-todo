@@ -54,7 +54,7 @@ export default function Todo(props) {
         <form>
           <center>
             <div className={classes.paper} c id="update-todo">
-              <h1>Lets update your todo 😊</h1>
+              <h1>Lets update your <br/> todo 😊</h1>
               {/* <input
                 placeholder={props.todo.todo}
                 value={input}
