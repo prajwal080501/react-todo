@@ -53,11 +53,3 @@ add-todo-button {
   text-align: center;
   font-family: "ZCOOL KuaiLe", cursive;
 }
-
-#update-todo{
-  position:relative;
-  left:110px;
-  right:250px;
-  width:25%;
-  height:25%;
-}
