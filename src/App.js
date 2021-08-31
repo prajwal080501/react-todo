@@ -1,5 +1,6 @@
 import "./App.css";
 import React, { useState } from "react";
+import { makeStyles } from '@material-ui/core/styles';
 import Button from "@material-ui/core/Button";
 import { TextField } from "@material-ui/core";
 import Todo from './Todo';
@@ -7,7 +8,9 @@ import { useEffect } from "react";
 import db from "./firebase"
 import firebase from "firebase"
 
-function App() {
+
+
+  function App() {
   const [todos, setTodos] = useState([""]);
   const [input, setInput] = useState("");
 
@@ -41,12 +44,13 @@ function App() {
             value={input}
             onChange={(event) => setInput(event.target.value)}
           /> */}
-          <TextField id="outlined-basic" label="Write a todos" variant="outlined" value={input}
+          <TextField mx="5" id="outlined-basic" label="Write a todos" variant="outlined" value={input}
             onChange={(event) => setInput(event.target.value)}/>
 
           <Button
+            mx="5"
             disabled={!input}
-            className="mx-5"
+            className="add-todo-button "
             variant="contained"
             type="submit"
             onClick={addTodo}

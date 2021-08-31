@@ -11,3 +11,38 @@
   align-items: center;
 }
 
+.delete-button{
+ color:black;
+}
+
+.delete-button:hover {
+  width:60px;
+  height:30px;
+  color:rgb(41, 130, 247);
+  transition: width, height, color;
+  transition-duration:0.7s;
+  transition-timing-function: ease;
+}
+add-todo-button{
+  position: relative;
+}
+.edit-button{
+  background-color:rgb(41, 130, 247);
+  color:white;
+  text-decoration: none;
+  border:2px solid white;
+  width:70px;
+  position:relative;
+  border:1px solid black;
+  bottom:7px;
+  right:6px;
+  height:35px;
+}
+.edit-button:hover{
+  color:rgb(9, 156, 224);
+  background-color: white;
+  transition:color, background-color;
+  transition-duration:0.5s;
+  transition-timing-function: ease-in-out;
+  border:1px solid black;
+}
