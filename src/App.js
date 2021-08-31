@@ -39,12 +39,12 @@ import firebase from "firebase"
     <div className="App">
       <form>
         <center>
-          <h1>Todos App</h1>
+          <h1 className="app-heading">Todos App</h1>
           {/* <input
             value={input}
             onChange={(event) => setInput(event.target.value)}
           /> */}
-          <TextField mx="5" id="outlined-basic" label="Write a todos" variant="outlined" value={input}
+          <TextField mx="5" id="outlined-basic" label="Write a todo" variant="outlined" value={input}
             onChange={(event) => setInput(event.target.value)}/>
 
           <Button

@@ -7,6 +7,7 @@ import {
 } from "@material-ui/core";
 import React from "react";
 import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
+import { TextField } from "@material-ui/core";
 import db from "./firebase";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
@@ -50,24 +51,34 @@ export default function Todo(props) {
         aria-labelledby="simple-modal-title"
         aria-describedby="simple-modal-description"
       >
-        <form >
-          <div className={classes.paper}>
-            <h1>Lets update your todo 😊</h1>
-            <input
-              placeholder={props.todo.todo}
-              value={input}
-              onChange={(event) => setInput(event.target.value)}
-            />
-            <Button
-              type="submit"
-              onClick={updateTodo}
-              className="update-button"
-              variant="contained"
-              color="primary"
-            >
-              Update todo{" "}
-            </Button>
-          </div>
+        <form>
+          <center>
+            <div className={classes.paper} c id="update-todo">
+              <h1>Lets update your todo 😊</h1>
+              {/* <input
+                placeholder={props.todo.todo}
+                value={input}
+                onChange={(event) => setInput(event.target.value)} */}
+              <TextField
+                id="outlined-basic"
+                label="Write a update for your todo"
+                variant="outlined"
+                placeholder={props.todo.todo}
+                value={input}
+                onChange={(event) => setInput(event.target.value)}
+              />
+              <Button
+                disabled={!input}
+                type="submit"
+                onClick={updateTodo}
+                className="update-button"
+                variant="contained"
+                color="primary"
+              >
+                Update todo{" "}
+              </Button>
+            </div>
+          </center>
         </form>
       </Modal>{" "}
       <div className="list-container">
